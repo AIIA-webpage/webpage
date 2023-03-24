@@ -47,40 +47,18 @@ class Gallery extends StatelessWidget {
     return SizedBox(
       width: isWeb ? pageWidth * .8 : pageWidth,
       child: AnimationLimiter(
-        child: GridView.count(
-          crossAxisCount: 3,
-          children: List.generate(
-            9,
-            (int index) {
-              return AnimationConfiguration.staggeredGrid(
-                position: index,
-                duration: const Duration(milliseconds: 375),
-                columnCount: 3,
-                child: ScaleAnimation(
-                  child: FadeInAnimation(
-                    child: GridView.count(
-                      crossAxisCount: 1,
-                      children: [
-                        //context, title, image, postWidget, padding
-                        noPost(context, ' ', ' ', nullWidget(), true),
-                        noPost(context, ' ', ' ', nullWidget(), true),
-                        noPost(context, 'OT', ' ', nullWidget(), true),
-                        noPost(context, 'OT', ' ', nullWidget(), true),
-                        noPost(context, 'OT', ' ', nullWidget(), true),
-                        noPost(context, 'OT', ' ', nullWidget(), true),
-                        noPost(context, 'OT', ' ', nullWidget(), true),
-                        post(context, 'NAKALICOUBAE 1', 'NAKALICOUBAE 1',
-                            nklcb0222(), true),
-                        post(context, 'AFAC 2301', 'AFAC 2301', afac0222(),
-                            true),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
+        child: GridView.count(crossAxisCount: 3, children: [
+          //context, title, image, postWidget, padding
+          noPost(context, ' ', ' ', nullWidget(), true),
+          noPost(context, ' ', ' ', nullWidget(), true),
+          noPost(context, 'OT', ' ', nullWidget(), true),
+          noPost(context, 'OT', ' ', nullWidget(), true),
+          noPost(context, 'OT', ' ', nullWidget(), true),
+          noPost(context, 'OT', ' ', nullWidget(), true),
+          noPost(context, 'OT', ' ', nullWidget(), true),
+          post(context, 'NAKALICOUBAE 1', 'NAKALICOUBAE 1', nklcb0222(), true),
+          post(context, 'AFAC 2301', 'AFAC 2301', afac0222(), true),
+        ]),
       ),
     );
   }

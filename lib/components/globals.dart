@@ -31,7 +31,7 @@ double contentsTextWidth = 1200; //남색배경 본문 텍스트박스 크기. 1
 
 //members.dart
 double groupName = 50; //그룹명(captin, co-pilot, ...)의 폰트 크기
-double profileSize = 65; //구성원 사진의 크기
+double profileSize = 120; //구성원 사진의 크기
 double nameSize = 25; //구성원 이름의 크기
 double card = 240; //플립 카드의 너비
 double majorFont = 20; //전공 폰트 크기
