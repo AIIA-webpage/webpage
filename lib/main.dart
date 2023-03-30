@@ -6,7 +6,7 @@ import 'package:aiia_webpage/pages/aiia_intro.dart';
 import 'package:aiia_webpage/pages/contents.dart';
 import 'package:aiia_webpage/pages/gallery.dart';
 import 'package:aiia_webpage/pages/members.dart';
-import 'package:aiia_webpage/pages/news.dart';
+import 'package:aiia_webpage/pages/news.dart';  
 import 'package:aiia_webpage/pages/postings/postings.dart';
 import 'package:flutter/material.dart';
 import 'components/globals.dart';
