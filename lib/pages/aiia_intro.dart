@@ -1,9 +1,9 @@
-import 'package:aiia_webpage/components/widgets/box.dart';
 import 'package:aiia_webpage/components/footer.dart';
 import 'package:aiia_webpage/components/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'galleries/afac.dart';
+import 'galleries/nakalicoubae.dart';
 
 late AnimationController _bannerController;
 late Animation<double> _bannerAnimation;
@@ -12,109 +12,44 @@ Tween<Offset> controllerTween =
     Tween<Offset>(begin: const Offset(0.05, 0), end: Offset.zero);
 
 bool isHovering = false;
-final List<String> imageList = [
-  'assets/boards/recruitment.png',
-  'assets/boards/AFAC.jpg',
-  'assets/boards/NKCB.jpg',
+
+final List<String> activityList = [
+'GACHON PROJECT',
+'MAJOR-STUDY GROUP',
+'FUTURE TECH SEMINAR',
+'NAKALICOUBAE ON THE BLOCK',
+'AFAC',
+'MEMBERCHIP TRAINING',
+'IT SHOW, AI EXPO'
 ];
 
-Widget titleStyle(String text, Color color) {
-  return Text(
-    text,
-    style: TextStyle(
-      fontSize: aiia2FontSize,
-      fontWeight: FontWeight.w800,
-      height: 1.2,
-      color: color,
-    ),
-  );
-}
-
-Widget logo() {
-  return FadeTransition(
-    opacity: _bannerAnimation,
-    child: Image.asset(
-      'assets/logos/logo1.png',
-      width: logoSize,
-    ),
-  );
-}
-
-Widget aiiaTitle() {
-  return FadeTransition(
-      opacity: _bannerAnimation,
-      child: isWeb
-          ? Text(
-              'AIIA',
-              style: TextStyle(
-                fontSize: aiia1FontSize,
-                fontWeight: FontWeight.w800,
-                height: 1.2,
-                color: Colors.white,
-              ),
-            )
-          : nullWidget());
-}
-
-Widget artificialIntelligenceInActions() {
-  return SlideTransition(
-    position: _movingController.drive(controllerTween),
-    child: FadeTransition(
-      opacity: _bannerAnimation,
-      child: Wrap(children: [
-        titleStyle('A', const Color(0xFF8B7CE0)),
-        titleStyle('rtificial', Colors.white),
-        titleStyle(' I', const Color(0xFF8292E3)),
-        titleStyle('ntelligence', Colors.white),
-        titleStyle(' I', const Color(0xFF70BEE3)),
-        titleStyle('n', Colors.white),
-        titleStyle(' A', const Color(0xFF63E4E5)),
-        titleStyle('ctions.', Colors.white),
-      ]),
-    ),
-  );
-}
-
-Widget aiiaIntroduce() {
-  return FadeTransition(
-    opacity: _bannerAnimation,
-    child: Container(
-      margin: const EdgeInsets.all(10),
-      width: contentsTextWidth,
-      child: Wrap(
-        children: [
-          SelectableText(
-            '\nAIIA는 교내 자율 동아리이자 교내 유일 IT 플랫폼 탐구·개발 동아리로, '
-            'AI·소프트웨어 학부 인공지능 전공 재학생 3명에 의해 2023년 1월 8일에 창설되었습니다. \n'
-            'Artificial Intelligence In Actions의 약자인 AIIA라는 동아리의 이름은 '
-            '프로젝트 성과를 위한 인공지능 모델 개발의 의지를 담고 있습니다.\n'
-            'AIIA는 Google에서 개발한 하이브리드 웹 프레임워크인 Flutter를 주 언어로 채택하여 '
-            'Android, iOS 등의 모바일 환경부터 Window와 macOS, Linux 등의 웹 브라우저 환경까지 '
-            '다양한 생태계에서 사용할 수 있는 애플리케이션 및 웹 서비스를 개발하는 ‘Gachon Project’를 동아리의 대표 활동으로 두고 있습니다.\n'
-            '이외에도 다양한 콘텐츠를 운영하여 '
-            '개인의 잠재력 향상과 AI·소프트웨어 학부 전체에 도움이 될 수 있도록 노력하고 있습니다.',
-            style: TextStyle(
-                fontSize: contentsFontSize, height: 1.9, color: Colors.white),
-          ),
-        ],
-      ),
-    ),
-  );
-}
+final List<String> textList = [
+'인공지능전공 학생들의 전공과목 스터디 시행 / 각종 프로젝트를 통하여 개인 포트폴리오 구성',
+'각 학년별로 모여 전공 과목 복습 및 공부할 수 있는 자리 마련 또는 선배님께 전공/학교생활 관련 조언을 얻을 수 있는 기회.',
+'모든 동아리원들이 참여하는 기술 동향 조사 프레젠테이션. 산업, 특히 인공지능 관련 트렌드를 읽고 분석하는 능력 향상.',
+'네카라쿠배에 근무중인 우리 학교 선배님을 모셔서 다양한 이야기를 듣고, Q&A 등을 진행합니다.',
+'설명회',
+'1년에 2번 정도 동아리원들이 참여하는 MT가 예정되어 있습니다.',
+'IT, AI 관련 박람회가 있을 때 동아리 단위로 행사에 참여하여 관련 기술 동향을 익히고 관심을 가지는 시간을 갖습니다.',
+];
 
 Widget imageBanner() {
   return Container(
     width: 600,
     margin: const EdgeInsets.all(15),
     child: CarouselSlider.builder(
-      itemCount: imageList.length,
+      itemCount: activityList.length,
       options: CarouselOptions(
         enlargeCenterPage: true,
         height: 350,
         autoPlay: true,
+        viewportFraction: 1.0,
+        disableCenter: true,
         autoPlayInterval: const Duration(seconds: 3),
         reverse: false,
-        aspectRatio: 5.0,
+        aspectRatio: 16/9,
+        animateToClosest: true,
+        padEnds: false
       ),
       itemBuilder: (context, i, id) {
         return GestureDetector(
@@ -126,15 +61,32 @@ Widget imageBanner() {
                 )),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                imageList[i],
-                width: 550,
-                fit: BoxFit.cover,
+              child: InkWell(
+                onTap: (){
+                  if(i == 3){
+                    popupForm(context, activityList[i], nklcbMenu(context));
+                  }
+                  else if(i == 4){
+                    popupForm(context, activityList[i], afacMenu(context));
+                  }
+                  else{
+                    commingSoon(context);
+                  }
+                },
+                child: Container(
+                  width: 300,
+                  height: 200,
+                  color: Colors.grey[300],
+                  child: Column(children: [
+                    Text(activityList[i], style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                    Text(textList[i], style: const TextStyle(fontSize: 20,))
+                  ],)
+                ),
               ),
             ),
           ),
           onTap: () {
-            var url = imageList[i];
+            var url = activityList[i];
           },
         );
       },
@@ -175,115 +127,88 @@ class _AiiaIntroState extends State<AiiaIntro> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  Widget linkButton() {
-    return InkWell(
-      onHover: (hovering) {
-        setState(() => isHovering = hovering);
-      },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 400),
-        curve: Curves.ease,
-        width: isHovering ? 360 : 300,
-        child: Image.asset(
-          'assets/components/button.png',
+  Widget gradientBackground() {
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 300,
+          color: Colors.white,
         ),
-      ),
-      onTap: () async {
-        var url = Uri.parse(
-            'https://link.inpock.co.kr/aiia?fbclid=PAAabUiversSc4ShOQKW55sHRyz2jvDbTaB8_oKsLmSsooxrgb_fn9MYwM72Q');
-        if (await canLaunchUrl(url)) {
-          await launchUrl(url);
-        } else {
-          throw 'Could not launch $url';
-        }
-      },
+        Container(
+          width: double.infinity,
+          height: 500,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white,
+                Color(0xFF9AD1EB),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 
-  //1st. 남색 배경에 돌고래 로고와 AIIA, 설명이 있는 블록
-  Widget aiia() {
-    return Container(
-        color: const Color(0xff161c2a),
-        child: isWeb
-            ? Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  logo(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      aiiaTitle(),
-                      artificialIntelligenceInActions(),
-                      aiiaIntroduce(),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                    ],
-                  )
-                ],
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  logo(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      aiiaTitle(),
-                      artificialIntelligenceInActions(),
-                      aiiaIntroduce(),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                    ],
-                  )
-                ],
-              ));
+  Widget miniLogo(double h) {
+    return Align(
+        alignment: Alignment.topCenter,
+        child: Column(
+          children: [
+            SizedBox(
+              height: h,
+            ),
+            Image.asset(
+              'assets/logos/logo.png',
+              width: 30,
+            ),
+          ],
+        ));
   }
 
-//2nd. 지원 관련 블록
-  Widget recruitment() {
+  Widget archive() {
     return Column(
       children: [
-        isWeb
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      box('AIIA에 지원하세요!', ' 2302 Recruitment (2/16 ~ 2/23)\n'),
-                      linkButton()
-                    ],
+        Container(
+          width: pageWidth,
+          height: 100,
+          color: const Color(0xFF161C2A),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: const [
+                  SizedBox(
+                    width: 20,
                   ),
-                  imageBanner()
-                ],
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      box('AIIA에 지원하세요!', ' 2302 Recruitment (2/16 ~ 2/23)\n'),
-                      linkButton()
-                    ],
+                  Text(
+                    'AIIA Contents',
+                    style: TextStyle(fontSize: 40, color: Colors.white),
                   ),
-                  imageBanner()
                 ],
-              )
+              ),
+            ],
+          ),
+        ),
+        Stack(
+          children: [
+            gradientBackground(),
+            miniLogo(70),
+            Align(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    SizedBox(height: 200),
+                    imageBanner(),
+                  ],
+                )),
+            miniLogo(680),
+          ],
+        ),
       ],
     );
   }
@@ -294,8 +219,7 @@ class _AiiaIntroState extends State<AiiaIntro> with TickerProviderStateMixin {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            aiia(),
-            recruitment(),
+            archive(),
           ],
         ),
         const Footer()

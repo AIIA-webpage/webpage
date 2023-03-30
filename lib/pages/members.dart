@@ -232,9 +232,47 @@ class _MembersState extends State<Members> {
             profileWidget('ChoiMinSeok', '최민석', 'AI·소프트웨어학부\n인공지능 전공 22학번',
                 'ChoiMinSeok.png'),
           ]),
-
-          titleSet('CREW ON PROBATION\n\n'),
-          const Footer()
+          titleSet('CREW ON PROBATION'),
+          Wrap(
+              runSpacing: 20,
+              children: [
+            const SizedBox(
+            width: 20),
+            profile('ChooHoSeong', '추호성', 'AI·소프트웨어학부\n인공지능 전공 23학번',
+            'ChooHoSeong.jpeg'),
+            const SizedBox(
+            width: 20),
+            profile('GukHuiGuen', '국희근', 'AI·소프트웨어학부\n인공지능 전공 23학번',
+            'GukHuiGeun.jpeg'),
+            const SizedBox(
+            width: 20),
+            profile('JinJunWoo', '진준우', 'AI·소프트웨어학부\n소프트웨어 전공 20 학번',
+                'JinJunWoo.jpeg'),
+            const SizedBox(
+                width: 20),
+            profile('JoYuJin', '조유진', 'AI·소프트웨어학부\n소프트웨어 전공 22학번',
+                'JoYuJin.jpeg'),
+            const SizedBox(
+                width: 20), profile('KimLeeHyeon', '김이현', 'AI·소프트웨어학부\n소프트웨어 전공 23학번',
+                'KimLeeHyeon.jpeg'),
+            const SizedBox(
+                width: 20), profile('KooBonWook', '구본욱', 'AI·소프트웨어학부\n소프트웨어 전공 20 학번',
+                'KooBonWook.jpeg'),
+            const SizedBox(
+                width: 20), profile('NamSeungWoo', '남승우', 'AI·소프트웨어학부\n인공지능 전공 23 학번',
+                'NamSeungWoo.jpeg'),
+            const SizedBox(
+                width: 20), profile('LeeHyoJin', '이효진', 'AI·소프트웨어학부\n컴퓨터공학 전공 20 학번',
+                'LeeHyoJin.jpeg'),
+            const SizedBox(
+                width: 20), profile('MoonHeeSang', '문희상', 'AI·소프트웨어학부\n소프트웨어 전공 19 학번',
+                'MoonHeeSang.jpeg'),
+            const SizedBox(
+                width: 20), profile('KwonMinJi', '권민지', 'AI·소프트웨어학부\n소프트웨어 전공 21 학번',
+                'KwonMinJi.jpg'),
+            const Footer(
+            ),
+      ]),
         ],
       ),
     );

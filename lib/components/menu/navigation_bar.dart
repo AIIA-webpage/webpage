@@ -50,9 +50,9 @@ class _navigation_barState extends State<navigation_bar> {
     double size = 8;
     if (page == 'aiia_intro' || page == 'news') {
       size = highLightSize * 5 / 7;
-    } else if (page == 'members' || page == 'contents') {
+    } else if (page == 'members') {
       size = highLightSize * 1.1;
-    } else if (page == 'gallery' || page == 'about') {
+    } else if (page == 'gallery') {
       size = highLightSize * 6 / 7;
     }
     //var boxRatio = getHighLightSize(n, page);
@@ -74,17 +74,13 @@ class _navigation_barState extends State<navigation_bar> {
       onTap: () {
         if (page == 'aiia_intro') {
           widget.getPage(0);
-        } else if (page == 'about') {
-          widget.getPage(1);
         } else if (page == 'members') {
-          widget.getPage(2);
-        } else if (page == 'contents') {
-          widget.getPage(3);
+          widget.getPage(1);
         } else if (page == 'news') {
-          widget.getPage(4);
+          widget.getPage(2);
           widget.getPost(0);
         } else if (page == 'gallery') {
-          widget.getPage(5);
+          widget.getPage(3);
         }
       },
       child: Padding(
@@ -100,11 +96,9 @@ class _navigation_barState extends State<navigation_bar> {
               height: 8,
             ),
             getHighLight(page, 0, 'aiia_intro'),
-            getHighLight(page, 1, 'about'),
-            getHighLight(page, 2, 'members'),
-            getHighLight(page, 3, 'contents'),
-            getHighLight(page, 4, 'news'),
-            getHighLight(page, 5, 'gallery'),
+            getHighLight(page, 1, 'members'),
+            getHighLight(page, 2, 'news'),
+            getHighLight(page, 3, 'gallery'),
           ],
         ),
       ),
@@ -183,18 +177,8 @@ class _navigation_barState extends State<navigation_bar> {
                               context,
                             ),
                             menu(
-                              'About',
-                              'about',
-                              context,
-                            ),
-                            menu(
                               'Members',
                               'members',
-                              context,
-                            ),
-                            menu(
-                              'Contents',
-                              'contents',
                               context,
                             ),
                             menu(

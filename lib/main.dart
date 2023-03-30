@@ -1,9 +1,7 @@
 import 'package:aiia_webpage/components/centered_view.dart';
 import 'package:aiia_webpage/components/menu/drawer.dart';
 import 'package:aiia_webpage/components/menu/navigation_bar.dart';
-import 'package:aiia_webpage/pages/about.dart';
 import 'package:aiia_webpage/pages/aiia_intro.dart';
-import 'package:aiia_webpage/pages/contents.dart';
 import 'package:aiia_webpage/pages/gallery.dart';
 import 'package:aiia_webpage/pages/members.dart';
 import 'package:aiia_webpage/pages/news.dart';  
@@ -59,16 +57,10 @@ class _MainPageState extends State<MainPage> {
     if (pageNum == 0) {
       return const AiiaIntro();
     } else if (pageNum == 1) {
-      return About();
-    } else if (pageNum == 2) {
       return Members(isWeb);
-    } else if (pageNum == 3) {
-      return Column(
-        children: [Contents(context)],
-      );
-    } else if (pageNum == 4) {
+    } else if (pageNum == 2) {
       return News(getPost);
-    } else if (pageNum == 5) {
+    } else if (pageNum == 3) {
       return const Gallery();
     }
     return const AiiaIntro();
@@ -105,7 +97,7 @@ class _MainPageState extends State<MainPage> {
           children: [
             navigation_bar(responsiveWidth, getPage, getPost),
             Expanded(
-                child: pageNum == 4 ? getPosting(context) : getWidget(context)),
+                child: pageNum == 2 ? getPosting(context) : getWidget(context)),
           ],
         ),
       ),
