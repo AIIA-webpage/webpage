@@ -68,6 +68,8 @@ void getSize(var responsiveWidth, var responsiveHeight) {
 
     //footer.dart
     footerFontSize = 12;
+    double footerHeight = 60; //footer 높이
+
 
     //pages
     //aiia_intro.dart
