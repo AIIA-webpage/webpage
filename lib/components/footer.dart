@@ -80,7 +80,7 @@ class Footer extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
                     child: Text(
-                      '©2023 AIIA. All Rights Reserved.', // 저작권 문구 추가
+                      '© 2023 AIIA. All Rights Reserved.', // 저작권 문구 추가
                       style: TextStyle(
                         fontSize: 12.0,
                         color: Colors.white, // 폰트 색상을 흰색으로 변경
