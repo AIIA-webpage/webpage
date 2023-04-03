@@ -166,6 +166,48 @@ class _MembersState extends State<Members> {
     );
   }
 
+  Widget spacingBlock() {
+    return SizedBox(
+      width: 100,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            width: 20,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 160,
+              ),
+              Image.asset(
+                'assets/logos/logo.png',
+                width: 30,
+              ),
+            ],
+          ),
+          const SizedBox(
+            width: 20,
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget probationProfile(
+      String engName, String korName, String summary, String fileName) {
+    return SizedBox(
+      width: card + 20,
+      child: Row(
+        children: [
+          const SizedBox(width: 20),
+          profile(engName, korName, summary, fileName),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -193,9 +235,7 @@ class _MembersState extends State<Members> {
             ),
             profileWidget('KimHanBaek', '김한백', 'AI·소프트웨어학부\n인공지능 전공 21학번',
                 'KimHanBaek.png'),
-            const SizedBox(
-              width: 50,
-            ),
+            spacingBlock(),
             profileWidget("KooDoYeon", "구도연", 'AI·소프트웨어학부\n인공지능 전공 21학번',
                 'KooDoYeon.jpg'),
             const SizedBox(
@@ -216,9 +256,7 @@ class _MembersState extends State<Members> {
             ),
             profileWidget('HwangJungMin', '황정민', 'AI·소프트웨어학부\n인공지능 전공 23학번',
                 'HwangJungMin.jpg'),
-            const SizedBox(
-              width: 50,
-            ),
+            spacingBlock(),
             profileWidget(
                 'KimJiMin', '김지민', 'AI·소프트웨어학부\n인공지능 전공 21학번', 'KimJiMin.jpg'),
             const SizedBox(
@@ -233,46 +271,27 @@ class _MembersState extends State<Members> {
                 'ChoiMinSeok.png'),
           ]),
           titleSet('CREW ON PROBATION'),
-          Wrap(
-              runSpacing: 20,
-              children: [
-            const SizedBox(
-            width: 20),
-            profile('ChooHoSeong', '추호성', 'AI·소프트웨어학부\n인공지능 전공 23학번',
-            'ChooHoSeong.jpeg'),
-            const SizedBox(
-            width: 20),
-            profile('GukHuiGuen', '국희근', 'AI·소프트웨어학부\n인공지능 전공 23학번',
-            'GukHuiGeun.jpeg'),
-            const SizedBox(
-            width: 20),
-            profile('JinJunWoo', '진준우', 'AI·소프트웨어학부\n소프트웨어 전공 20 학번',
-                'JinJunWoo.jpeg'),
-            const SizedBox(
-                width: 20),
-            profile('JoYuJin', '조유진', 'AI·소프트웨어학부\n소프트웨어 전공 22학번',
-                'JoYuJin.jpeg'),
-            const SizedBox(
-                width: 20), profile('KimLeeHyeon', '김이현', 'AI·소프트웨어학부\n소프트웨어 전공 23학번',
+          Wrap(runSpacing: 20, children: [
+            probationProfile('ChooHoSeong', '추호성', 'AI·소프트웨어학부\n인공지능 전공 23학번',
+                'ChooHoSeong.jpeg'),
+            probationProfile('GukHuiGuen', '국희근', 'AI·소프트웨어학부\n인공지능 전공 23학번',
+                'GukHuiGeun.jpeg'),
+            probationProfile(
+                'JoYuJin', '조유진', 'AI·소프트웨어학부\n소프트웨어 전공 22학번', 'JoYuJin.jpeg'),
+            probationProfile('KimLeeHyeon', '김이현', 'AI·소프트웨어학부\n소프트웨어 전공 23학번',
                 'KimLeeHyeon.jpeg'),
-            const SizedBox(
-                width: 20), profile('KooBonWook', '구본욱', 'AI·소프트웨어학부\n소프트웨어 전공 20 학번',
+            probationProfile('KooBonWook', '구본욱', 'AI·소프트웨어학부\n소프트웨어 전공 20 학번',
                 'KooBonWook.jpeg'),
-            const SizedBox(
-                width: 20), profile('NamSeungWoo', '남승우', 'AI·소프트웨어학부\n인공지능 전공 23 학번',
+            probationProfile('NamSeungWoo', '남승우', 'AI·소프트웨어학부\n인공지능 전공 23 학번',
                 'NamSeungWoo.jpeg'),
-            const SizedBox(
-                width: 20), profile('LeeHyoJin', '이효진', 'AI·소프트웨어학부\n컴퓨터공학 전공 20 학번',
+            probationProfile('LeeHyoJin', '이효진', 'AI·소프트웨어학부\n컴퓨터공학 전공 20 학번',
                 'LeeHyoJin.jpeg'),
-            const SizedBox(
-                width: 20), profile('MoonHeeSang', '문희상', 'AI·소프트웨어학부\n소프트웨어 전공 19 학번',
+            probationProfile('MoonHeeSang', '문희상', 'AI·소프트웨어학부\n소프트웨어 전공 19 학번',
                 'MoonHeeSang.jpeg'),
-            const SizedBox(
-                width: 20), profile('KwonMinJi', '권민지', 'AI·소프트웨어학부\n소프트웨어 전공 21 학번',
+            probationProfile('KwonMinJi', '권민지', 'AI·소프트웨어학부\n소프트웨어 전공 21 학번',
                 'KwonMinJi.jpg'),
-            const Footer(
-            ),
-      ]),
+            const Footer(),
+          ]),
         ],
       ),
     );
