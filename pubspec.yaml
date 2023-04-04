@@ -43,6 +43,7 @@ dependencies:
   flutter_staggered_animations: ^1.0.0
   hovering: ^1.0.4
   getwidget: ^3.0.1
+  card_swiper : ^2.0.4
 
 dev_dependencies:
   flutter_test:
@@ -96,6 +97,11 @@ flutter:
         weight: 800
       - asset: assets/fonts/OpenSans-Regular.ttf
         weight: 400
+   - family: Apple SD
+     fonts:
+      - asset: assets/fonts/AppleSDGothicNeoB.ttf
+        weight: 100
+        
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

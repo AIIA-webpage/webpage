@@ -62,25 +62,4 @@ class Gallery extends StatelessWidget {
       ),
     );
   }
-
-  /* SizedBox(
-      width: isWeb ? pageWidth * .8 : pageWidth,
-      child: GridView.count(
-        crossAxisCount: 3,
-        children: [
-          //context, title, image, postWidget, padding
-          noPost(context, ' ', ' ', nullWidget(), true),
-          noPost(context, ' ', ' ', nullWidget(), true),
-          noPost(context, 'OT', ' ', nullWidget(), true),
-          noPost(context, 'OT', ' ', nullWidget(), true),
-          noPost(context, 'OT', ' ', nullWidget(), true),
-          noPost(context, 'OT', ' ', nullWidget(), true),
-          noPost(context, 'OT', ' ', nullWidget(), true),
-          post(context, 'NAKALICOUBAE 1', 'NAKALICOUBAE 1', nklcb0222(), true),
-          post(context, 'AFAC 2301', 'AFAC 2301', afac0222(), true),
-        ],
-      ),
-    );
-
-   */
 }
