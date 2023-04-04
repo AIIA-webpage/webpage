@@ -4,24 +4,54 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'galleries/nakalicoubae.dart';
 
-Widget post(BuildContext context, String title, String tempText, Widget widget,
-    bool padding) {
+Widget post(BuildContext context, String title, String tempText, Widget widget, bool padding) {
   return Container(
-      padding:
-          isWeb && padding ? const EdgeInsets.all(20) : const EdgeInsets.all(2),
-      child: ElevatedButton(
-          onPressed: () {
-            popupForm(context, title, widget);
-          },
-          style: ElevatedButton.styleFrom(elevation: 2.0),
-          child: Text(tempText)));
+    width: 280,
+    height: 420,
+    padding: isWeb && padding ? const EdgeInsets.all(20) : const EdgeInsets.all(2),
+    decoration: BoxDecoration(
+      color: Colors.black,
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(
+              'assets/logos/white_whale.png',
+              width: 50,
+              height: 50,
+            ),
+            SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 24, // 폰트 크기를 작게 조정
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(width: 20),
+          ],
+        ),
+        Expanded(child: widget),
+      ],
+    ),
+  );
 }
+
 
 Widget noPost(BuildContext context, String title, String tempText,
     Widget widget, bool padding) {
   return Container(
       padding:
-          isWeb && padding ? const EdgeInsets.all(20) : const EdgeInsets.all(2),
+      isWeb && padding ? const EdgeInsets.all(20) : const EdgeInsets.all(2),
       child: ElevatedButton(
           onPressed: () {
             commingSoon(context);

@@ -10,7 +10,8 @@ Widget nklcb0222() {
         Container(
             padding: const EdgeInsets.all(10),
             child: Image.asset(
-              'assets/activities/NaKaLiCouBae/00$i.jpg',
+              'assets/logos/NaKa.png',
+              fit: BoxFit.cover,
             )),
     ],
   );

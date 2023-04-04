@@ -6,13 +6,16 @@ Widget afac0222() {
     children: [
       for (int i = 1; i <= 10; i++)
         Container(
-            padding: const EdgeInsets.all(10),
-            child: Image.asset(
-              'assets/activities/AFAC/0222/$i.jpg',
-            )),
+          padding: const EdgeInsets.all(10),
+          child: Image.asset(
+            'assets/logos/AFAC.png',
+            fit: BoxFit.cover,
+          ),
+        ),
     ],
   );
 }
+
 
 Widget afacMenu(BuildContext context) {
   return SizedBox(
