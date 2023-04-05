@@ -30,7 +30,7 @@ Widget post(BuildContext context, String title, String tempText, Widget widget, 
               child: Text(
                 title,
                 style: TextStyle(
-                  fontSize: 24, // 폰트 크기를 작게 조정
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -40,11 +40,14 @@ Widget post(BuildContext context, String title, String tempText, Widget widget, 
             SizedBox(width: 20),
           ],
         ),
-        Expanded(child: widget),
+        Expanded(
+          child: widget,
+        ),
       ],
     ),
   );
 }
+
 
 
 Widget noPost(BuildContext context, String title, String tempText,

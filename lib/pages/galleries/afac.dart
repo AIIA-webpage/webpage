@@ -2,17 +2,9 @@ import 'package:aiia_webpage/pages/gallery.dart';
 import 'package:flutter/material.dart';
 
 Widget afac0222() {
-  return ListView(
-    children: [
-      for (int i = 1; i <= 10; i++)
-        Container(
-          padding: const EdgeInsets.all(10),
-          child: Image.asset(
-            'assets/logos/AFAC.png',
-            fit: BoxFit.cover,
-          ),
-        ),
-    ],
+  return Image.asset(
+    'assets/logos/AFAC.png',
+    fit: BoxFit.cover,
   );
 }
 

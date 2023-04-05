@@ -346,7 +346,7 @@ class _AiiaIntroState extends State<AiiaIntro> with TickerProviderStateMixin {
                               color: Colors.white,
                               size: 30,
                             ),
-                            const SizedBox(height: 1000),
+                           
                             Column(
                               children: [
                                 Row(
@@ -362,9 +362,7 @@ class _AiiaIntroState extends State<AiiaIntro> with TickerProviderStateMixin {
                                     coloredText('ctions', 60, 0xFF000000),
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 100,
-                                ),
+
                                 Wrap(
                                   children: const [
                                     Text(
